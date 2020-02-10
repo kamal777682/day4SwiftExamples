@@ -10,18 +10,39 @@ import Foundation
 
 class Student : Person
 {
-    lazy var marks = [String : Double]()
+    private lazy var marks = [String : Double]()
+    init(id: Int, name: String, gender: Gender,marks : [String : Double])
+    {
+        super.init(id: id, name: name ,gender: gender)
+        self.marks = marks
+    }
+    
+    subscript(code: String)-> Double
+    {
+        get{
+            self.marks[code] ??  0.0
+        }
+        set ( newValue)
+        {
+            self.marks.updateValue(newValue, forKey: code)
+        }
+    }
     var total : Double
     {
-        return 0.0
+        return self.calculateTotal()
     }
     var per : Double
     {
-        return 0.0
+        return self.calculatePercentage()
     }
     var result : String
     {
         return "Pass"
+    }
+    
+    func setMarks(code: String, mark : Double)
+    {
+        self.marks.updateValue(mark, forKey: code)
     }
     
     private func calculateTotal()->Double
