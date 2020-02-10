@@ -8,5 +8,4 @@
 
 import Foundation
 
-
-
+var p1 = Person(id: 1, name: "Kamal", gender: .Female, birthDate: Date())
