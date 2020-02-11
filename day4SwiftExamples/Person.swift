@@ -42,6 +42,7 @@ class Person : DisplayDelegate
     func display()
     {
         print ("ID      : \(self.id)")
+
         print("NAme     : \(self.name)")
         print("GEnder   : \(self.gender)")
         if let d = self.birthDate
@@ -54,6 +55,6 @@ class Person : DisplayDelegate
             print ("BirthDate   : No Birtdate found")
         }
         
-      }
+    }FGFDGcv
     
 }
