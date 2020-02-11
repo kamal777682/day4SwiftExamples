@@ -14,3 +14,8 @@ var s1 = Student(id: 1, name: "Kamal", gender: .Female, marks: ["MAD01" : 65.0,"
 s1.setMarks(code: "MAD03", mark: 80.0)
 //s1.setMarks(code: "MAD03", mark: 60.0) update value using code of subscript
 print(s1["MAD03"])
+print(s1[0])
+print(s1[1])
+print(s1[4])
+p1.display()
+s1.display()

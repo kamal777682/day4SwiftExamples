@@ -27,6 +27,22 @@ class Student : Person
             self.marks.updateValue(newValue, forKey: code)
         }
     }
+    
+    subscript( code : Int)->Any
+    {
+        get{
+            if code == 0
+            {
+                return self.id
+            }
+            else if code == 1
+            {
+                return self.name
+            }
+            return self.gender
+        }
+    }
+    
     var total : Double
     {
         return self.calculateTotal()
@@ -55,5 +71,12 @@ class Student : Person
     func calculatePercentage()->Double
     {
          return self.total / Double(self.marks.count)
+    }
+     
+        override func display()
+    {
+        print("Total        : \(self.total)")
+        print("Percentage   : \(self.per)")
+        print("Result       : \(self.result)")
     }
 }

@@ -13,8 +13,10 @@ enum Gender
     case Male, Female , Others
 }
 
-class Person
+class Person : DisplayDelegate
 {
+  
+    
     var id : Int
     var name : String
     var gender : Gender
@@ -37,4 +39,21 @@ class Person
         self.gender = gender;
         self.birthDate = birthDate
     }
+    func display()
+    {
+        print ("ID      : \(self.id)")
+        print("NAme     : \(self.name)")
+        print("GEnder   : \(self.gender)")
+        if let d = self.birthDate
+        {
+            print("Birtdate  : \(d)")
+            print("BirtDate : \(self.age)")
+        }
+        else
+        {
+            print ("BirthDate   : No Birtdate found")
+        }
+        
+      }
+    
 }
